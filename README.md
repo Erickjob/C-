@@ -1,2 +1,2 @@
-# C-
+# C++
 Destinado as aulas do IFRN
