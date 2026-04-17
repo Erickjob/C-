@@ -4,11 +4,22 @@
 
 bool prime(long long n)
 {
-    int qty_divs = 0;
-    for (long long d = 1; d <= n; ++d)
-        if (n % d == 0)
-            qty_divs++;
-    return qty_divs == 2;
+   if (n == 1)
+        std::cout << "falso" << std::endl;
+    
+    if(n == 2)
+        std::cout << "verdadeiro" << std::endl;
+    
+    if (n % 2 == 0)
+        std::cout << "falso" << std::endl;
+    
+    int quantidade_divisores = 1;
+
+    for (int i = 3; i < n/2; i++ ){
+        if (n % i == 0){
+            quantidade_divisores++;
+        }
+        return quantidade_divisores == 1;
 }
 int main(){
    std::ifstream entrada("entrada.txt");
@@ -19,21 +30,7 @@ int main(){
     {
     auto beg = std::chrono::high_resolution_clock::now();
 
-    if (numero == 1)
-        std::cout << "falso" << std::endl;
     
-    if(numero == 2)
-        std::cout << "verdadeiro" << std::endl;
-    
-    if (numero % 2 == 0)
-        std::cout << "falso" << std::endl;
-    
-    int quantidade_divisores = 1;
-
-    for (int i = 3; i < numero/2; i++ ){
-        if (numero % i == 0){
-            quantidade_divisores++;
-        }
     auto end = std::chrono::high_resolution_clock::now();
     
     }
