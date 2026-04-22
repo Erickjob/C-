@@ -2,12 +2,20 @@
 
 int sub_lista(int vetor[], unsigned int tamanho){
     int contador = 0;
+    int quantidade = 0; 
     for (unsigned int indice = 1; indice < tamanho; indice++){
-      if (vetor[indice-1] <= vetor[indice])
-         contador++;    
+        if (vetor[indice-1] <= vetor[indice]){
+            contador++;
+        }
+        else{
+         contador = 1;
+        }    
+        if (contador > quantidade){
+            quantidade = contador;
+        }
     }
     
-    return ;
+    return quantidade;
 }
 
 int main(){
