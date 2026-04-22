@@ -4,7 +4,7 @@
 int soma(int vetor[], unsigned int tamanho, int valor){
     int soma = 0;
     for (unsigned int indice = 0; indice < tamanho; indice++){ 
-        for (unsigned int sub_indice = 1; sub_indice < tamanho; sub_indice++){ 
+        for (unsigned int sub_indice = indice + 1; sub_indice < tamanho; sub_indice++){ 
             soma = vetor[indice] + vetor[sub_indice];
             if(soma == valor)
                 return soma;
