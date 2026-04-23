@@ -6,3 +6,4 @@
 //############### QUESTAO 2 ##############
 
 //ordenação => n < log2n < n² < n³ < nlog2n < 2^n
+// logn < n < nlogn < n² < n³ < 2^n
