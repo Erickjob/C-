@@ -12,45 +12,55 @@ int main(){
     bool possivel = false;
 
     //testar 1 foto em pé se é maior que o álbum
-    if(largura_f1 > largura and altura_f1 > altura  || largura_f2 > largura and altura_f2 > altura ){
+    if(largura_f1 > largura || altura_f1 > altura  || largura_f2 > largura || altura_f2 > altura ){
         possivel = false;
     }
     //Testar 1 foto deitada
-      if(largura_f1 > altura and altura_f1 > largura  || largura_f2 > altura and altura_f2 > largura ){
+      if(largura_f1 > altura || altura_f1 > largura  || largura_f2 > altura || altura_f2 > largura ){
         possivel = false;
-    }
+        }
+        
 
 
     //Lado a lado em pé
-    if (largura_f1 + largura_f2 < largura ){
+    if (largura_f1 + largura_f2 < largura and altura_f1 < altura and altura_f2 < altura){
         possivel = true;
     }
 
     //Empilhado em pé
-    if (altura_f1 + altura_f2 < altura ){
+    if (altura_f1 + altura_f2 < altura and largura_f1 < largura and largura_f2 < largura){
         possivel = true;
     }
 
     //lado a lado deitado
-     if (altura_f1 + altura_f2 < largura ){
+     if (altura_f1 + altura_f2 < largura and largura_f1 < altura and largura_f2 < altura){
         possivel = true;
     }
 
-    //Empilhado deitado
-    if (altura_f1 + altura_f2 < largura){
+    //Empilhado deitado   ****quarto if*****
+    if (largura_f1 + largura_f2 < altura and altura_f1 < largura and altura_f2 < largura ){
         possivel = true;
     }
 
     //Empilhado com foto 2 girada.
-    if (altura_f1 + largura_f2 < altura){
+    if (altura_f1 + largura_f2 < altura and largura_f1 < largura and altura_f2 < largura){
         possivel = true;
     }
 
-    //Lado a lado 1 em pé a outra girada
-    if (largura_f1 + altura_f2 < largura){
+    //Lado a lado foto 1 em pé a e foto 2 girada
+    if (largura_f1 + altura_f2 < largura and altura_f1 < altura and largura_f2 < altura){
         possivel = true;
     }
 
+    //empilhado com foto 1 girada e foto 2 em pé
+    if (largura_f1 + altura_f2 < altura and altura_f1 < largura and largura_f2 < largura){
+        possivel = true;
+    }
+
+    //lado a lado com foto 1 girada e foto 2 em pé
+    if (altura_f1 + largura_f2 < largura and largura_f1 < altura and altura_f2 < altura){
+        possivel = true;
+    }
     if(possivel){
         std::cout << 'S' << std::endl;
     }else{
