@@ -7,13 +7,16 @@ private:
         struct ll_int_node *next;
     };
     ll_int_node *first, *last;
+    unsigned int size_;
 
 public:
     ll_int()
     {
         this->first = nullptr;
         this->last = nullptr;
+        this->size_= 0;
     }
+
     void push_front(int value)
     {
         ll_int_node *new_node = new ll_int_node;
@@ -61,6 +64,8 @@ public:
         delete this->last;
         this->last = current;
     }
+
+     
     int front()
     {
         if (this->first != nullptr)
@@ -68,7 +73,7 @@ public:
         else
             return -1;
     }
-    int back()
+    unsigned int back()
     {
         if (this->last != nullptr)
             return this->last->value;
@@ -86,19 +91,25 @@ public:
         }
         return ans;
     }
+    bool insert_after(int index, int value){
+        if(this->first == nullptr || index > this->size_)
+            return false;
 
-    int size(){                                  //O(n)
-        if (this->first == nullptr)
-            return -1;
-        if (this->first == this->last)
-            return 0;
-        int count = 1;
         ll_int_node *current = this->first;
-        while (current != nullptr){
+        
+        while (current->value != x){
             current = current->next;
-            count++;
         }
-        return count;
+        current = current->next;
+        current
+        
+
+        }
+
+    }
+
+    unsigned int size(){   
+        return this->size_;
     }
 
     int get_at(int index){                        //O(n)
@@ -111,7 +122,7 @@ public:
         return value;
     }
 
-    int set_at(int indice, int value){           //O(n)
+    void set_at(int indice, int value){           //O(n)
         ll_int_node *current = this->first;
         for (int i=0; i < indice; i++){
             current = current->next;
