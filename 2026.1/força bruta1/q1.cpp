@@ -1,5 +1,7 @@
 #include <iostream>
 
+//***** notação big-oh é O(n) *****
+
 int main(){
     int largura;
     int altura;
@@ -10,17 +12,6 @@ int main(){
     std:: cin >> largura >> altura >> largura_f1 >> altura_f1 >> largura_f2 >> altura_f2;
 
     bool possivel = false;
-
-    //testar 1 foto em pé se é maior que o álbum
-    if(largura_f1 > largura || altura_f1 > altura  || largura_f2 > largura || altura_f2 > altura ){
-        possivel = false;
-    }
-    //Testar 1 foto deitada
-      if(largura_f1 > altura || altura_f1 > largura  || largura_f2 > altura || altura_f2 > largura ){
-        possivel = false;
-        }
-        
-
 
     //Lado a lado em pé
     if (largura_f1 + largura_f2 < largura and altura_f1 < altura and altura_f2 < altura){

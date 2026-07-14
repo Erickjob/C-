@@ -1,15 +1,11 @@
 #include <iostream>
 
-<<<<<<< Updated upstream
 // int maior_soma(int a[], int n)
 // int resposta = a[0] + a[1];
 // for (int i=1; i <n-1; i++;
 // if (a[i]+a[i+1] > resposta){
 //    resposta = a[i]+a[i+1]
 
-=======
-// equação de temop de execução é de 9n+7
->>>>>>> Stashed changes
 
 int maior_soma(int vetor[], unsigned int tamanho){
     int resultado = 0; //1
