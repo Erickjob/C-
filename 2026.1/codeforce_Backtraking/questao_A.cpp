@@ -1,30 +1,25 @@
 #include <iostream>
-int soma(int tamanho,int vetor[],int soma){
-    int count = 0;
-    for (int indice = 0; indice < tamanho; indice++){
-        for(int indicej = indice; indicej < tamanho; indicej++){
-            if (soma == (vetor [indice] + vetor [indicej]))
-                count++; 
-        }
-    }
-    return count;
+int soma_sublista(int* vetor,int tamanho, int soma){
+    if (soma == 0) return 1;
+    if (soma < 0 || tamanho == 0) return 0;
+    int r1 = soma_sublista(vetor, tamanho-1, soma-vetor[tamanho-1]);
+    int r2 = soma_sublista(vetor, tamanho-1,soma);
+    return r1+r2;
+
 }
 
 int main(){
-    int tamanho;
-    int valor_soma;
-    std::cin >> tamanho;
-    std::cin >> valor_soma;
-
-    
-
-    int vetor [tamanho];
+    int *vetor, tamanho, soma;
+    std::cin >> tamanho >> soma;
+    vetor = new int [tamanho];
     for (int indice = 0; indice < tamanho; indice++){
         std::cin >> vetor[indice];
     }
+    if (soma_sublista(vetor, tamanho, soma))
+        std::cout <<soma_sublista << std::endl;
+    else
+        std::cout << 0 <<std::endl;
 
-    
-    std::cout << soma(tamanho, vetor, valor_soma) << std::endl;
-
-    
+    delete vetor;
+    return 0;   
 }
